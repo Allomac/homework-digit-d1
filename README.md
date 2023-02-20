@@ -1,4 +1,4 @@
-Readme.md file for Terraform HomeWork Digit D1
+Terraform HomeWork Digit D1
 
 Project done by me:
 

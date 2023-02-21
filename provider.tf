@@ -7,7 +7,7 @@ terraform {
   }
 }
 provider "aws" {
-  region = var.region
+  region  = var.region
   profile = "terraform-user" # here you can replace terraform-user with your profile name
   #shared_credentials_file = "/d/Users/allamar/.aws/credentials" 
 }

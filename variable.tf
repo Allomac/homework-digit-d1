@@ -1,7 +1,7 @@
 variable "server_port" {
   description = "The port the server will use for HTTP requests"
   type        = number
-  }
+}
 
 variable "ami" {
   description = "Amazon Linux 2 AMI (HVM) - Kernel 5.10, SSD Volume Type"
@@ -9,22 +9,22 @@ variable "ami" {
 }
 
 variable "region" {
-description = "my aws region"
-type = string
+  description = "my aws region"
+  type        = string
 
 }
 
 variable "bucket_name" {
-description = "my s3 bucket name"
-type = string
+  description = "my s3 bucket name"
+  type        = string
 }
 
 variable "instance_type" {
-type = string
+  type = string
 }
 
 variable "vpc_cidr" {
-type = string
+  type = string
 }
 
 variable "username" {

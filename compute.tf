@@ -1,13 +1,13 @@
 
 # Creation of webserver with wordpress
 resource "aws_instance" "myserver" {
- ami                    = var.ami
-  instance_type          = var.instance_type
-  subnet_id = aws_subnet.public-1a.id
+  ami                         = var.ami
+  instance_type               = var.instance_type
+  subnet_id                   = aws_subnet.public-1a.id
   associate_public_ip_address = true
-  vpc_security_group_ids = [aws_security_group.http-sg.id]
-  key_name      = var.keyname
-  user_data = file("userdata.sh")
+  vpc_security_group_ids      = [aws_security_group.http-sg.id]
+  key_name                    = var.keyname
+  user_data                   = file("userdata.sh")
 
   user_data_replace_on_change = true
 
@@ -47,11 +47,11 @@ resource "aws_security_group" "http-sg" {
 # Creation of mysql database in private subnet
 
 resource "aws_instance" "mysql-db" {
-  ami           = "ami-0a896b04a8a52170e"
-  instance_type = var.instance_type
-  key_name      = var.keyname
-  subnet_id =  aws_subnet.private-1a.id
-  vpc_security_group_ids = [ aws_security_group.mysql-sg.id ]
+  ami                    = "ami-0a896b04a8a52170e"
+  instance_type          = var.instance_type
+  key_name               = var.keyname
+  subnet_id              = aws_subnet.private-1a.id
+  vpc_security_group_ids = [aws_security_group.mysql-sg.id]
   tags = {
     Name = "mysql-os"
   }

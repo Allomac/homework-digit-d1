@@ -7,7 +7,15 @@ terraform {
   }
 }
 provider "aws" {
+  #https://www.hashicorp.com/blog/default-tags-in-the-terraform-aws-provider
+  default_tags {
+    tags = {
+      Environment = "dev"
+      Project     = "homework"
+      Automation  = "Terraform"
+    }
+  }
   region = var.region
-  profile = "terraform-user" # here you can replace terraform-user with your profile name
+  # profile = "terraform-user" # here you can replace terraform-user with your profile name
   #shared_credentials_file = "/d/Users/allamar/.aws/credentials" 
 }
